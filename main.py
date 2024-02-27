@@ -3,6 +3,7 @@ from models import *
 if __name__ == '__main__':
 
     articulo1 = Articulo("A001", "Camiseta de algodón", "Ropa", True, True, True, 0.16, 50, False, "CS001", "L001", 15.99)
+    print(articulo1.activo)
     articulo2 = Articulo("A002", "Smartphone", "Electrónica", True, True, True, 0.21, 20, False, "SP001", "L002", 399.99)
     articulo3 = Articulo("A003", "Leche entera", "Alimentos", True, True, True, 0.10, 100, True, "LE001", "L003", 1.99)
     articulo4 = Articulo("A004", "Pelota de fútbol", "Deporte", True, True, True, 0.21, 30, False, "PF001", "L004", 9.99)
@@ -16,23 +17,23 @@ if __name__ == '__main__':
     maestro_ubicaciones = [ubicacion1, ubicacion2, ubicacion3]
 
     # Stock inicial.
-    transaccion1 = Transaccion("TI001", "Stock inicial", False, articulo1, 100, ubicacion1, ubicacion2)
-    transaccion2 = Transaccion("TI002", "Stock inicial", False, articulo2, 50, ubicacion1, ubicacion2)
-    transaccion3 = Transaccion("TI003", "Stock inicial", False, articulo3, 200, ubicacion1, ubicacion2)
-    transaccion4 = Transaccion("TI004", "Stock inicial", False, articulo4, 80, ubicacion1, ubicacion2)
+    transaccion1 = Transaccion(articulo1, 100, ubicacion1, ubicacion2)
+    transaccion2 = Transaccion(articulo2, 50, ubicacion1, ubicacion2)
+    transaccion3 = Transaccion(articulo3, 200, ubicacion1, ubicacion2)
+    transaccion4 = Transaccion(articulo4, 80, ubicacion1, ubicacion2)
 
     # Transferencias entre ubicaciones.
     transacciones = [
-        Transaccion("TI001", "Stock inicial", False, articulo1, 100, ubicacion1, ubicacion2),
-        Transaccion("TI002", "Stock inicial", False, articulo2, 50, ubicacion1, ubicacion2),
-        Transaccion("TI003", "Stock inicial", False, articulo3, 200, ubicacion1, ubicacion2),
-        Transaccion("TI004", "Stock inicial", False, articulo4, 80, ubicacion1, ubicacion2),
-        Transaccion("TT001", "Transferencia", False, articulo1, 20, ubicacion2, ubicacion3),
-        Transaccion("TT002", "Transferencia", False, articulo2, 10, ubicacion2, ubicacion3),
-        Transaccion("TT003", "Transferencia", False, articulo3, 50, ubicacion2, ubicacion3),
-        Transaccion("TT004", "Transferencia", False, articulo4, 30, ubicacion2, ubicacion3),
-        Transaccion("TT005", "Transferencia", False, articulo1, 15, ubicacion3, ubicacion1),
-        Transaccion("TT006", "Transferencia", False, articulo2, 8, ubicacion3, ubicacion1)
+        Transaccion(articulo1, 100, ubicacion1, ubicacion2),
+        Transaccion(articulo2, 50, ubicacion1, ubicacion2),
+        Transaccion(articulo3, 200, ubicacion1, ubicacion2),
+        Transaccion(articulo4, 80, ubicacion1, ubicacion2),
+        Transaccion(articulo1, 20, ubicacion2, ubicacion3),
+        Transaccion(articulo2, 10, ubicacion2, ubicacion3),
+        Transaccion(articulo3, 50, ubicacion2, ubicacion3),
+        Transaccion(articulo4, 30, ubicacion2, ubicacion3),
+        Transaccion(articulo1, 15, ubicacion3, ubicacion1),
+        Transaccion(articulo2, 8, ubicacion3, ubicacion1)
     ]
 
     unidades_por_ubicacion = {}
