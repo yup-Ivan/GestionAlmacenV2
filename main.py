@@ -48,17 +48,14 @@ if __name__ == '__main__':
     unidades_por_ubicacion = {}
 
     for transaccion in transacciones:
-        articulo = transaccion.articulo
-        ubicacion_destino = transaccion.ubi_destino
-        cantidad = transaccion.cantidad
 
-        if ubicacion_destino in unidades_por_ubicacion:
-            if articulo in unidades_por_ubicacion[ubicacion_destino]:
-                unidades_por_ubicacion[ubicacion_destino][articulo] += cantidad
+        if transaccion.ubi_destino in unidades_por_ubicacion:
+            if transaccion.articulo in unidades_por_ubicacion[transaccion.ubi_destino]:
+                unidades_por_ubicacion[transaccion.ubi_destino][transaccion.articulo] += transaccion.cantidad
             else:
-                unidades_por_ubicacion[ubicacion_destino][articulo] = cantidad
+                unidades_por_ubicacion[transaccion.ubi_destino][transaccion.articulo] = transaccion.cantidad
         else:
-            unidades_por_ubicacion[ubicacion_destino] = {articulo: cantidad}
+            unidades_por_ubicacion[transaccion.ubi_destino] = {transaccion.articulo: transaccion.cantidad}
 
     for ubicacion, unidades_articulos in unidades_por_ubicacion.items():
         print(f"Ubicación: {ubicacion.codigo}")
