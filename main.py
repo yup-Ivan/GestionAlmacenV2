@@ -17,7 +17,7 @@ if __name__ == '__main__':
     ubicacion2 = Ubicacion("UB002", "Estantería A", True)
     ubicacion3 = Ubicacion("UB003", "Estantería B", False)
 
-    maestro_articulos = [articulo1, articulo2, articulo3, articulo4]
+    maestro_articulos = [articulo1, articulo2, articulo3, articulo4, articulo5]
     maestro_ubicaciones = [ubicacion1, ubicacion2, ubicacion3]
 
     # Stock inicial.
