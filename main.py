@@ -1,4 +1,4 @@
-from models import *
+from models import Articulo, Servicio, Ubicacion, Transaccion, SolicitudPedido
 
 if __name__ == '__main__':
 
